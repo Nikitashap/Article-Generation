@@ -32,21 +32,17 @@ class BotHandler:
 
         return last_update
 bot = BotHandler(token)  
-greetings = ('hello', 'hi', 'greetings', 'sup')  
-now = datetime.datetime.now()
 
 pause = False
 def main():  
     global pause
     new_offset = None
-    today = now.day
-    hour = now.hour
 
     while True:
         bot.get_updates(new_offset)
-        print(bot.get_updates(new_offset))
+ 
+       
         last_update = bot.get_last_update()
-
         last_update_id = last_update['update_id']
         last_chat_text = last_update['message']['text']
         last_chat_id = last_update['message']['chat']['id']
@@ -60,10 +56,7 @@ def main():
             if last_chat_text.lower() == '/article':
                 bot.send_message(last_chat_id, lenta_ai.generation())
 
-        # elif last_chat_text.lower() in greetings and today == now.day and 17 <= hour < 23:
-        #     bot.send_message(last_chat_id, 'Good Evening  {}'.format(last_chat_name))
-        #     today += 1
-
+     
 
 if __name__ == '__main__':  
     try:
