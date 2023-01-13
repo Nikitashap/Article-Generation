@@ -1,7 +1,7 @@
 import lenta_ai
 import requests  
 import datetime
-token = "5864889305:AAHa1d4Wr1AUpRicc1Sjw5jW6FYbMB8z_Vw"
+token = "5970326751:AAFmz7fwnOx4MvQ1vJoB04_RgP2zTUue6fQ"
 
 class BotHandler:
 
